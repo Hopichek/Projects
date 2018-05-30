@@ -6,9 +6,14 @@ class Critter
 {
 public:
 
+	Critter(){
+		HungerLevel = 50;
+		ActiveLevel = 50;
+	}
+	
     int getHungerLevel(){
         return HungerLevel;
-    };
+    }
 
     void passTime(){
         HungerLevel++;
@@ -19,24 +24,24 @@ public:
         if(ActiveLevel < 10){
             cout << "Питомец хочет спать";
         }
-    };
+    }
 
     int getActiveLevel(){
         return ActiveLevel;
 
-    };
+    }
 
     void sleep(int HoursSleep){
-        ActiveLevel+HoursSleep;
-    };
+        ActiveLevel = ActiveLevel + HoursSleep;
+    }
 
     void feed(int Hunger){
-        HungerLevel - Hunger;
-    };
+        HungerLevel = HungerLevel - Hunger;
+    }
 
     void play(int Active){
-        ActiveLevel - Active;
-    };
+        ActiveLevel = ActiveLevel - Active;
+    }
 
     void ShowData(){
         cout << "Уровень голода = " << HungerLevel << endl;
@@ -51,9 +56,13 @@ private:
 };
 
 int main(){
+	
+	 cout << "Приветствуем в тамагочи" << endl;
+	
+	while(1){
+		
     Critter fox;
 
-    cout << "Приветствуем в тамагочи" << endl;
     cout << "Введите номер желаемого действия" << endl;
     cout << "1 - вывести уровень голода и активности питомца" << endl;
     cout << "2 - покормить питомца" << endl;
@@ -93,4 +102,5 @@ int main(){
             break;
         }
     }
+}
 }
